@@ -8,6 +8,21 @@ public class TennisSet {
 	private Map<Integer, Game> games;
 	private int[] finalScors;
 	private int winner;
+	private boolean tieBreak=false;
+
+	/**
+	 * @return the tieBreak
+	 */
+	public boolean isTieBreak() {
+		return tieBreak;
+	}
+
+	/**
+	 * @param tieBreak the tieBreak to set
+	 */
+	public void setTieBreak(boolean tieBreak) {
+		this.tieBreak = tieBreak;
+	}
 
 	/**
 	 * 
@@ -20,6 +35,7 @@ public class TennisSet {
 		this.games = new HashMap<Integer, Game>();
 		this.finalScors = new int[] { 0, 0 };
 		this.winner = 0;
+		this.tieBreak=false;
 	}
 
 	/**
@@ -81,10 +97,14 @@ public class TennisSet {
 		if (this.finalScors.length == 2) {
 			int p1 = this.finalScors[0];
 			int p2 = this.finalScors[1];
-			if(p1==6&&p2<=4|| p1 == 7 )
+			if(p1>=6&&p1-p2>=2|| (p1 == 7 &&!tieBreak) )
 				return 1;
-			if(p2==6&&p1<=4|| p2 == 7)
-				return 2;			
+			if(p2>=6&&p2-p1>=2|| (p2 == 7 &&!tieBreak))
+				return 2;	
+			if(p2==p1&& p1==6) {
+				tieBreak=true;
+				return 0;
+			}
 		}else {
 			return -1;
 		}

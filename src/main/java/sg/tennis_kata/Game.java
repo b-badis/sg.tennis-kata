@@ -73,14 +73,14 @@ public class Game {
 
 		if (playerNumber == 1) {// if the winner is the player 1
 			if ((this.player1.getScore().getValue() == 40 && !isDeuce())
-					|| (this.player1.getScore().getValue() > 40 && hasAdvantage() == 1)) {
+					|| (hasAdvantage() == 1)) {
 				this.setWinner(1);
 			} else {
 				this.player1.getScore().increment();
 			}
 		} else if (playerNumber == 2) {// if the winner is the player 2
 			if ((this.player2.getScore().getValue() == 40 && !isDeuce())
-					|| (this.player2.getScore().getValue() > 40 && hasAdvantage() == 2)) {
+					|| (hasAdvantage() == 2)) {
 				this.setWinner(2);
 			} else {
 				this.player2.getScore().increment();

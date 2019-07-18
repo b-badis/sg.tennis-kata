@@ -29,8 +29,6 @@ public class ScoreTest {
 			assertEquals(30, score.getValue());
 			score.increment();
 			assertEquals(40, score.getValue());
-			score.increment();
-			assertEquals(40, score.getValue());
 		} catch (GameException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

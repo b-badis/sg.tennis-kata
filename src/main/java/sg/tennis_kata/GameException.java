@@ -9,6 +9,10 @@ package sg.tennis_kata;
  */
 public class GameException extends Exception{
 
+	/**
+	 * 
+	 */
+
 	public GameException(String errorMessage) {
 		super(errorMessage);
 	}
