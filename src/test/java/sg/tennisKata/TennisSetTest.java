@@ -1,13 +1,16 @@
 /**
  * 
  */
-package sg.tennis_kata;
+package sg.tennisKata;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
+
+import sg.tennisKata.GameException;
+import sg.tennisKata.TennisSet;
 
 /**
  * @author b.barbouch

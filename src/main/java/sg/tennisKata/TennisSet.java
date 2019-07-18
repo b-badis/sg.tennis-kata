@@ -1,4 +1,4 @@
-package sg.tennis_kata;
+package sg.tennisKata;
 
 import java.util.HashMap;
 import java.util.Map;

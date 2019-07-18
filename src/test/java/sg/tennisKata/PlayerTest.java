@@ -1,9 +1,11 @@
 /**
  * 
  */
-package sg.tennis_kata;
+package sg.tennisKata;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
+
+import sg.tennisKata.Player;
 
 /**
  * @author Badis

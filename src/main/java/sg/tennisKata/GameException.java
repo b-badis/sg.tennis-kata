@@ -1,7 +1,7 @@
 /**
  * 
  */
-package sg.tennis_kata;
+package sg.tennisKata;
 
 /**
  * @author Badis
