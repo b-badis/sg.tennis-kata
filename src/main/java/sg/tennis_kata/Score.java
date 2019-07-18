@@ -24,16 +24,19 @@ private int value;
 	 * increment the score
 	 * @throws GameException 
 	 */
-	public void increment() throws GameException {		
+	public int increment() throws GameException {		
 		int[] expectedValues = {0, 15, 30, 40};
-		if (!IntStream.of(expectedValues).anyMatch(x -> x == this.value)) {
+		if (this.value<=40&&!IntStream.of(expectedValues).anyMatch(x -> x == this.value)) {
 			throw new GameException("score value not supported");
 		}
     	if (this.value == 0 || this.value == 15) {
     		this.value += 15;
     	} else if (this.value == 30) {
     		this.value = 40;
-    	}		
+    	}else {
+    		this.value++;
+    	}
+    	return this.value;
 	}
 
 	/**

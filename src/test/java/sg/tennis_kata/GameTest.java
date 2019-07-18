@@ -58,4 +58,67 @@ public class GameTest {
 		assertEquals(40, game.getPlayer2().getScore().getValue());
 		assertEquals("Player 1 : 0	-	Player 2 : 0\nPlayer 1 : 0	-	Player 2 : 15\nPlayer 1 : 0	-	Player 2 : 30\nPlayer 1 : 0	-	Player 2 : 40\n", game.showScores());
     }
+    
+    @Test
+    public void testIsDeuce() throws GameException
+    {
+    	game.reset();
+    	game.playerScores(2);
+		assertEquals(15, game.getPlayer2().getScore().getValue());
+		game.playerScores(2);
+		assertEquals(30, game.getPlayer2().getScore().getValue());
+		game.playerScores(2);
+		assertEquals(40, game.getPlayer2().getScore().getValue());
+		game.playerScores(1);
+		assertEquals(15, game.getPlayer1().getScore().getValue());
+		game.playerScores(1);
+		assertEquals(30, game.getPlayer1().getScore().getValue());
+		game.playerScores(1);
+		assertEquals(40, game.getPlayer1().getScore().getValue());
+		assertEquals(true,game.isDeuce());
+    }
+    
+    @Test
+    public void testHasAdvantage() throws GameException
+    {
+    	game.reset();
+    	game.playerScores(2);
+		assertEquals(15, game.getPlayer2().getScore().getValue());
+		game.playerScores(2);
+		assertEquals(30, game.getPlayer2().getScore().getValue());
+		game.playerScores(2);
+		assertEquals(40, game.getPlayer2().getScore().getValue());
+		game.playerScores(1);
+		assertEquals(15, game.getPlayer1().getScore().getValue());
+		game.playerScores(1);
+		assertEquals(30, game.getPlayer1().getScore().getValue());
+		game.playerScores(1);
+		assertEquals(40, game.getPlayer1().getScore().getValue());
+		game.playerScores(1);
+		assertEquals(41, game.getPlayer1().getScore().getValue());
+		assertEquals(1,game.hasAdvantage());
+    }
+    
+    @Test
+    public void testHasWanAfterAdvantage() throws GameException
+    {
+    	game.reset();
+    	game.playerScores(2);
+		assertEquals(15, game.getPlayer2().getScore().getValue());
+		game.playerScores(2);
+		assertEquals(30, game.getPlayer2().getScore().getValue());
+		game.playerScores(2);
+		assertEquals(40, game.getPlayer2().getScore().getValue());
+		game.playerScores(1);
+		assertEquals(15, game.getPlayer1().getScore().getValue());
+		game.playerScores(1);
+		assertEquals(30, game.getPlayer1().getScore().getValue());
+		game.playerScores(1);
+		assertEquals(40, game.getPlayer1().getScore().getValue());
+		game.playerScores(1);
+		assertEquals(41, game.getPlayer1().getScore().getValue());
+		assertEquals(0,game.getWinner());
+		game.playerScores(1);
+		assertEquals(1,game.getWinner());
+    }
 }
